@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    background-color: #102C57;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+#notes-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.note {
+    border: .5px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #102C57;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#add-note-btn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.stylesButton{
+    border: none;
+    border-radius: 12px;
+    background-color: #DAC0A3;
+    color: white;
+    
+    
+}
+
+.stylesButton:hover{
+    background-color: #80ccff;
+}
+
+.apple{
+    padding-left: 250px;
+}
+
