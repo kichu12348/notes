@@ -21,6 +21,7 @@ body {
     color: white;
     background-color: #282828;
     position: relative;
+    transition: background-color 0.3s ease; 
 }
 
 .stylesButton {
@@ -80,8 +81,7 @@ body.light-mode .idkw {
     color: #333;
 }
 
-.note.light-mode {
-    background-color: #fff ;
+body.light-mode .note {
+    background-color: #fff;
     color: #333;
 }
-
