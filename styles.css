@@ -58,6 +58,9 @@ body {
     padding: 10px;
     color: white;
     transition: background-color 0.4s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .theme {
@@ -85,4 +88,24 @@ body.light-mode .idkw {
 body.light-mode .note {
     background-color: #fff;
     color: #333;
+}
+
+.LoginButton{
+    border: none;
+    border-radius: 12px;
+    background-color: #7a5af5;
+    color: white;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.LoginButton:hover{
+    background-color: #9171f8;
+    cursor: pointer;
+
+}
+
+.LoginLink{
+    padding: 0 0 20px 20px;
+    
 }
