@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #121212;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.4s ease; 
 }
 
 #notes-container {
@@ -21,7 +21,7 @@ body {
     color: white;
     background-color: #282828;
     position: relative;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.4s ease; 
 }
 
 .stylesButton {
@@ -56,15 +56,16 @@ body {
     bottom: 0;
     width: 150px;
     padding: 10px;
-    cursor: pointer;
     color: white;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.4s ease; 
 }
 
 .theme {
     width: 38px;
     height: 38px;
     margin: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 .bapple {
