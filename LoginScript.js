@@ -9,15 +9,16 @@ function checkCredentials() {
     var passwordInput = document.getElementById('password').value;
 
     // Replace 'your_username' and 'your_password' with your actual credentials
-    const correctUsername = 'k';
-    const correctPassword = 'k';
+    const correctUsername = 'notes1234';
+    const correctPassword = '12345678';
 
     if (usernameInput === correctUsername && passwordInput === correctPassword) {
-        console.log("check");
+        
         // Redirect to another website
-        window.location.href = "https://youtu.be/xvFZjo5PgG0?si=bRAJie7w_kNp198o"; // Replace with your desired URL
+        window.location.href = "addNotes.html";
     } else {
         alert('Incorrect credentials. Please try again.');
-        console.log("nope");
+        
     }
 }
+
