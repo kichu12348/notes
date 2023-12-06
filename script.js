@@ -14,3 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
         themeIcon.src = currentSrc.includes(lightIconPath) ? darkIconPath : lightIconPath;
     });
 });
+
+
+// Retrieve notes from localStorage
+var savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+
+// Display each saved note
+savedNotes.forEach(function(note) {
+    var newNoteDiv = document.createElement('div');
+    newNoteDiv.className = 'note';
+    newNoteDiv.innerHTML = '<h2 class="bapple">' + note.title + '</h2><a href="' + note.link + '" class="apple"><button class="stylesButton">View PDF</button></a>';
+    document.getElementById('notes-container').appendChild(newNoteDiv);
+});
+
+
