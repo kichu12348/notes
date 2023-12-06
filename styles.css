@@ -109,3 +109,48 @@ body.light-mode .note {
     padding: 0 0 20px 20px;
     
 }
+
+
+
+@media only screen and (max-width: 600px) {
+
+    body {
+      font-size: 14px; /* Example: reduce the font size for smaller screens */
+    }
+  
+    #notes-container {
+      max-width: 100%; /* Adjust max-width for smaller screens */
+      padding-right: 20px; /* Example: reduce padding for smaller screens */
+      padding-top: 10px; /* Example: reduce padding for smaller screens */
+    }
+  
+    .note {
+      padding: 10px; /* Example: increase padding for smaller screens */
+    }
+  
+    .apple {
+      padding: 0; /* Remove excessive padding on small screens */
+    }
+  
+    .idk {
+      flex-direction: column; 
+    }
+  
+    .idkw {
+      width: 100%; 
+      padding: 10px; 
+      justify-content: space-around; 
+    }
+  
+    .theme {
+      margin: 8px 0; 
+    }
+  
+    .bapple {
+      padding-left: 10px; 
+    }
+  
+    .LoginLink {
+      padding: 20px; 
+    }
+  }
