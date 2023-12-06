@@ -2,60 +2,86 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
-}
-
-header {
-    background-color: #102C57;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
+    background-color: #121212;
+    transition: background-color 0.3s ease; 
 }
 
 #notes-container {
     max-width: 600px;
     margin: 20px auto;
+    padding-right: 500px;
+    padding-top: 20px;
 }
 
 .note {
     border: .5px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
+    color: white;
+    background-color: #282828;
+    position: relative;
 }
 
-footer {
-    background-color: #102C57;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#add-note-btn {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #2ecc71;
-    color: #fff;
+.stylesButton {
     border: none;
+    border-radius: 12px;
+    background-color: #7a5af5;
+    color: white;
+    padding: 10px;
+}
+
+.stylesButton:hover {
+    background-color: #9171f8;
     cursor: pointer;
 }
 
-.stylesButton{
+.apple {
+    padding: 0 150px 0 150px;
+}
+
+.idk {
+    display: flex;
+    flex-direction: row;
+}
+
+.idkw {
     border: none;
-    border-radius: 12px;
-    background-color: #DAC0A3;
+    border-radius: 5px;
+    background-color: #282828;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+    padding: 10px;
+    cursor: pointer;
     color: white;
-    
-    
+    transition: background-color 0.3s ease; 
 }
 
-.stylesButton:hover{
-    background-color: #80ccff;
+.theme {
+    width: 38px;
+    height: 38px;
+    margin: 8px;
 }
 
-.apple{
-    padding-left: 250px;
+.bapple {
+    padding-left: 20px;
 }
+
+body.light-mode {
+    background-color: #f5f5f5 !important; 
+    color: #333;
+}
+
+body.light-mode .idkw {
+    background-color: #fff;
+    color: #333;
+}
+
+.note.light-mode {
+    background-color: #fff ;
+    color: #333;
+}
+

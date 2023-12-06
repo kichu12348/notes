@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const notesContainer = document.getElementById("notes-container");
-    const addNoteBtn = document.getElementById("add-note-btn");
+    const themeIcon = document.getElementById("themeIcon");
+    const body = document.body;
 
-    addNoteBtn.addEventListener("click", function () {
-        const noteText = prompt("Enter your note:");
-        if (noteText) {
-            createNoteElement(noteText);
-        }
+    themeIcon.addEventListener("click", function () {
+        // Toggle light/dark mode
+        body.classList.toggle("light-mode");
+
+        // Toggle the icon between light and dark
+        const currentSrc = themeIcon.src;
+        const lightIconPath = "light.png";
+        const darkIconPath = "dark.png"; // Replace with the path to your dark theme icon
+
+        themeIcon.src = currentSrc.includes(lightIconPath) ? darkIconPath : lightIconPath;
     });
-
-    function createNoteElement(noteText) {
-        const noteElement = document.createElement("div");
-        noteElement.classList.add("note");
-        noteElement.textContent = noteText;
-        notesContainer.appendChild(noteElement);
-    }
 });
