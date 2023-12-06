@@ -18,6 +18,7 @@ body {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
+    margin-left: 200px;
     color: white;
     background-color: #282828;
     position: relative;
@@ -126,7 +127,7 @@ body.light-mode .note {
   
     .note {
       padding: 10px; /* Example: increase padding for smaller screens */
-    }
+      
   
     .apple {
       padding: 0; /* Remove excessive padding on small screens */
