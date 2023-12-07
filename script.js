@@ -1,3 +1,50 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyD-0MCaaCYjfnrYrdSajtXIzJsL5nLddz8",
+    authDomain: "notes-6588f.firebaseapp.com",
+    databaseURL: "https://notes-6588f-default-rtdb.firebaseio.com",
+    projectId: "notes-6588f",
+    storageBucket: "notes-6588f.appspot.com",
+    messagingSenderId: "214921220799",
+    appId: "1:214921220799:web:de547cb77176de4f306c0a"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  
+  var NotesDB = firebase.database().ref('addNotesForm');
+
+function retrieveAndDisplayData() {
+  NotesDB.once('value')
+    .then(function (snapshot) {
+      var notes = snapshot.val();
+
+      if (notes) {
+        Object.keys(notes).forEach(function (noteKey) {
+          var name = notes[noteKey].name;
+          var link = notes[noteKey].link;
+
+          // Create a new note div for each retrieved note
+          var newNoteDiv = document.createElement('div');
+          newNoteDiv.className = 'note';
+          newNoteDiv.innerHTML = '<h2 class="bapple">' + name + '</h2><a href="' + link + '" class="apple"><button class="stylesButton">View PDF</button></a>';
+
+          // Append the new note div to the notes container
+          document.getElementById('notes-container').appendChild(newNoteDiv);
+        });
+      } else {
+        console.log("No notes found");
+      }
+    })
+    .catch(function (error) {
+      console.error("Error retrieving data: ", error);
+    });
+}
+
+retrieveAndDisplayData();
+
+  
+
+
+//theme
 document.addEventListener("DOMContentLoaded", function () {
     const themeIcon = document.getElementById("themeIcon");
     const body = document.body;
@@ -16,15 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Retrieve notes from localStorage
-var savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
 
-// Display each saved note
-savedNotes.forEach(function(note) {
-    var newNoteDiv = document.createElement('div');
-    newNoteDiv.className = 'note';
-    newNoteDiv.innerHTML = '<h2 class="bapple">' + note.title + '</h2><a href="' + note.link + '" class="apple"><button class="stylesButton">View PDF</button></a>';
-    document.getElementById('notes-container').appendChild(newNoteDiv);
-});
 
 
