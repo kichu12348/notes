@@ -92,6 +92,9 @@ const firebaseConfig = {
   // Call the function to retrieve and display data when the page loads
   retrieveAndDisplayData();
   
+
+
+  
   
   
 
