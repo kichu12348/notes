@@ -31,6 +31,7 @@ body {
     background-color: #7a5af5;
     color: white;
     padding: 10px;
+    transition: all 0.4s ease;
 }
 
 .stylesButton:hover {
@@ -91,6 +92,32 @@ body.light-mode .note {
     color: #333;
 }
 
+body.light-mode .LoginButton{
+  background-color: #03fc56;
+  color: white;
+}
+
+body.light-mode .LoginButton:hover{
+  background-color: #51fd6c;
+  color: white;
+  cursor: pointer;
+}
+
+body.light-mode .stylesButton{
+  background-color: #03fc56;
+  color: white;
+
+}
+
+body.light-mode .stylesButton:hover{
+  background-color: #51fd6c;
+  color: white;
+  cursor: pointer;
+
+}
+
+
+
 .LoginButton{
     border: none;
     border-radius: 12px;
@@ -98,6 +125,7 @@ body.light-mode .note {
     color: white;
     padding: 10px;
     margin-top: auto;
+    transition: all 0.4s ease;
 }
 
 .LoginButton:hover{
