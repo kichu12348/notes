@@ -15,7 +15,7 @@ function checkCredentials() {
     if (usernameInput === correctUsername && passwordInput === correctPassword) {
         
         // Redirect to another website
-        window.location.href = "addNotes.html";
+        window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
     } else {
         alert('Incorrect credentials. Please try again.');
         
