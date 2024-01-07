@@ -1,42 +1,42 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyD-0MCaaCYjfnrYrdSajtXIzJsL5nLddz8",
-    authDomain: "notes-6588f.firebaseapp.com",
-    databaseURL: "https://notes-6588f-default-rtdb.firebaseio.com",
-    projectId: "notes-6588f",
-    storageBucket: "notes-6588f.appspot.com",
-    messagingSenderId: "214921220799",
-    appId: "1:214921220799:web:de547cb77176de4f306c0a"
-  };
-  
-  firebase.initializeApp(firebaseConfig);
-  
-  var NotesDB = firebase.database().ref('addNotesForm');
+  apiKey: "AIzaSyD-0MCaaCYjfnrYrdSajtXIzJsL5nLddz8",
+  authDomain: "notes-6588f.firebaseapp.com",
+  databaseURL: "https://notes-6588f-default-rtdb.firebaseio.com",
+  projectId: "notes-6588f",
+  storageBucket: "notes-6588f.appspot.com",
+  messagingSenderId: "214921220799",
+  appId: "1:214921220799:web:de547cb77176de4f306c0a"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var NotesDB = firebase.database().ref('addNotesForm');
 
 function retrieveAndDisplayData() {
-  NotesDB.once('value')
-    .then(function (snapshot) {
-      var notes = snapshot.val();
+  NotesDB.on('value', function (snapshot) {
+    var notes = snapshot.val();
+    var notesContainer = document.getElementById('notes-container');
+    notesContainer.innerHTML = ''; // Clear existing notes
 
-      if (notes) {
-        Object.keys(notes).forEach(function (noteKey) {
-          var name = notes[noteKey].name;
-          var link = notes[noteKey].link;
+    if (notes) {
+      Object.keys(notes).forEach(function (noteKey) {
+        var name = notes[noteKey].name;
+        var link = notes[noteKey].link;
 
-          // Create a new note div for each retrieved note
-          var newNoteDiv = document.createElement('div');
-          newNoteDiv.className = 'note';
-          newNoteDiv.innerHTML = '<h2 class="bapple">' + name + '</h2><a href="' + link + '" class="apple"><button class="stylesButton">View PDF</button></a>';
+        // Create a new note div for each retrieved note
+        var newNoteDiv = document.createElement('div');
+        newNoteDiv.className = 'note';
+        newNoteDiv.innerHTML = '<h2 class="bapple">' + name + '</h2><a href="' + link + '" class="apple"><button class="stylesButton">View PDF</button></a>';
 
-          // Append the new note div to the notes container
-          document.getElementById('notes-container').appendChild(newNoteDiv);
-        });
-      } else {
-        console.log("No notes found");
-      }
-    })
-    .catch(function (error) {
-      console.error("Error retrieving data: ", error);
-    });
+        // Append the new note div to the notes container
+        notesContainer.appendChild(newNoteDiv);
+      });
+    } else {
+      console.log("No notes found");
+    }
+  }, function (error) {
+    console.error("Error retrieving data: ", error);
+  });
 }
 
 retrieveAndDisplayData();
